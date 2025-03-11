@@ -1,4 +1,4 @@
 # CluelessCodersToolbox
-For novices, the CluelessCodersToolbox is a beginner-friendly guide & tools offering essential best practices, straightforward setup instructions, and visual aids to help novice coders navigate coding and GitHub with confidence. This toolbox is your go-to resource for making coding accessible and enjoyable!
+The CluelessCodersToolbox is a beginner-friendly guide and toolset designed to help novice coders confidently navigate code and GitHub. It offers essential best practices, clear setup instructions, and visual aids to make the coding process more accessible and enjoyable!
 
 
