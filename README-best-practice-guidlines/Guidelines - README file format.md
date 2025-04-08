@@ -1,13 +1,12 @@
 # Expert Instructions for LLM
 ## Generate a Beginner-Friendly, Insightful, and Actionable README.md
 
-
 ## Guiding Principles
 
 - Target audience **"clueless coders"**: natural language prompt engineers, coding newcomers, vibe coders or casual contributors.
 - Write with **clarity, empathy**, and accessible language.
 - Combine **motivation, explanation, and actionable instructions.**
-- Visually rich—**use badges, flowcharts, diagrams wherever helpful**. When creating Mermaid diagrams, **prefer darker colors for shapes to ensure sufficient contrast**.
+- Visually rich—use badges, flowcharts, diagrams *with high contrast and readability* wherever helpful.
 - Surface all **prerequisite knowledge early**, minimizing surprises.
 - Provide **multiple setup paths**; warn explicitly about tricky parts.
 - Help users understand **what the repo does, why it exists, and how it fits together**.
@@ -26,9 +25,9 @@
 - **Language/runtime versions** badges: e.g., Python 3.11+, Node.js v20+
 - **Supported OS badges:** Windows, Linux, macOS.
 - **Build/Test status** badges (GitHub Actions, etc.)
-  
-*Example:*  
-  
+
+*Example:*
+
 `[![License: MIT](...)] [![Python 3.11+](...)] [![Windows](...)] [![Linux](...)]`
 
 ---
@@ -36,9 +35,9 @@
 ### 2. Project Purpose ("What & Why")
 
 - **One or two short paragraphs** answering:
-  - What problem does this project solve?
-  - Who benefits, who is it made for?
-  - Why is this interesting or important?
+    - What problem does this project solve?
+    - Who benefits, who is it made for?
+    - Why is this interesting or important?
 - Use **plain language analogies** or simple explanations.
 
 ---
@@ -46,10 +45,10 @@
 ### 3. Tech Stack Overview (ALWAYS near the top)
 
 - Quick **bullet list or table** stating:
-  - Languages and frameworks used
-  - Databases or storage
-  - Infrastructure/services
-  - AI models or APIs
+    - Languages and frameworks used
+    - Databases or storage
+    - Infrastructure/services
+    - AI models or APIs
 - Clarify **minimum programming/runtime versions**.
 
 *→ So beginners immediately judge compatibility*
@@ -67,10 +66,10 @@
 ### 5. Key Features List
 
 - Clear, **bulleted enumeration** of what the project does:
-  - Core features
-  - Notable integrations
-  - Unique aspects
-- Optionally add a **file structure code block** or Mermaid chart showing folder layout. When using Mermaid, **use darker colors for shapes**.
+    - Core features
+    - Notable integrations
+    - Unique aspects
+- Optionally add a **file structure code block** or Mermaid chart showing folder layout.
 
 ---
 
@@ -78,24 +77,38 @@
 
 - **Explain the architecture or workflow** in beginner language.
 - Use both:
-  - Concise **step-by-step description** (e.g., 1-4 steps)
-  - A **Mermaid flowchart or diagram** of data/logic flow. When creating Mermaid diagrams, **prefer darker colors for shapes to ensure sufficient contrast**.
+    - Concise **step-by-step description** (e.g., 1-4 steps)
+    - A **Mermaid flowchart or diagram** of data/logic flow.
 - Cover:
-  - Inputs
-  - Key processing stages
-  - Outputs/display
+    - Inputs
+    - Key processing stages
+    - Outputs/display
 
 *Diagrams create powerful clarity for all readers.*
+
+**Mermaid Diagram Color Instructions (Strict):**
+- **Purpose:** Ensure high contrast and readability for all users.
+- **Syntax:** Use `style <nodeID> fill:#<hexcode>,stroke:#333333,color:#111111` for styling nodes.
+- **Node Fill Colors:** ONLY use colors from this palette:
+    - `#bbf7d0` (light green)
+    - `#ffddcc` (light orange)
+    - `#cceeff` (light blue)
+    - `#fffacd` (light yellow)
+    - `#eeeeee` (light grey - for neutral/default nodes)
+- **Node Text Color:** ALWAYS use `#111111` (near black) for text inside nodes.
+- **Node Border/Stroke Color:** ALWAYS use `#333333` (dark grey).
+- **Arrow/Link Color:** Use default or `#333333` (dark grey).
+- **DO NOT** use other fill colors or dark fill colors. Prioritize light backgrounds with dark text.
 
 ---
 
 ### 7. Prerequisites & Accounts
 
 - List **tools/accounts** you need _before_ setup:
-  - Programming language versions
-  - Package managers / CLI tools
-  - External API keys with links
-  - Required services (e.g., DB)
+    - Programming language versions
+    - Package managers / CLI tools
+    - External API keys with links
+    - Required services (e.g., DB)
 - Provide **download links** and a sentence about why the tool is needed.
 - Explicitly warn if Docker is optional or problematic for beginners.
 
@@ -125,19 +138,33 @@
 
 ### 9. Visual Setup Guide
 
-- **Mermaid flowchart or mind map** summarizing the full setup & launch process. When creating Mermaid diagrams, **use darker colors for shapes to improve readability**.
+- **Mermaid flowchart or mind map** summarizing the full setup & launch process
 - Include visual differentiation for options
 - Use **color blocks** or emojis for clarity
 - *Inspired by your detailed diagram, but encourage embedding per-project diagrams*
+
+**Mermaid Diagram Color Instructions (Strict):**
+- **Purpose:** Ensure high contrast and readability for all users.
+- **Syntax:** Use `style <nodeID> fill:#<hexcode>,stroke:#333333,color:#111111` for styling nodes.
+- **Node Fill Colors:** ONLY use colors from this palette (use different colors to distinguish steps/options):
+    - `#bbf7d0` (light green) - *e.g., for success/run steps*
+    - `#ffddcc` (light orange) - *e.g., for alternative paths like Docker*
+    - `#cceeff` (light blue) - *e.g., for setup/install steps*
+    - `#fffacd` (light yellow) - *e.g., for decision points or configuration*
+    - `#eeeeee` (light grey) - *e.g., for start/end or neutral steps*
+- **Node Text Color:** ALWAYS use `#111111` (near black) for text inside nodes.
+- **Node Border/Stroke Color:** ALWAYS use `#333333` (dark grey).
+- **Arrow/Link Color:** Use default or `#333333` (dark grey).
+- **DO NOT** use other fill colors or dark fill colors. Prioritize light backgrounds with dark text. *Match the style of the example diagram's setup workflow.*
 
 ---
 
 ### 10. Running the Project
 
 - **Copy-paste-ready commands** for:
-  - Starting the app
-  - Running core functions
-  - Testing basic functionality
+    - Starting the app
+    - Running core functions
+    - Testing basic functionality
 - Prefer **minimal, beginner-proof commands.**
 
 ---
@@ -154,10 +181,10 @@
 ### 12. Status & Roadmap
 
 - **Emoji-coded list**:
-  - What works now (✅)
-  - What’s WIP (⏳)
-  - Known issues (⚠️)
-  - Next planned features (🔜)
+    - What works now (✅)
+    - What’s WIP (⏳)
+    - Known issues (⚠️)
+    - Next planned features (🔜)
 - Optionally invite contributors.
 
 ---
@@ -193,9 +220,9 @@
 - **Explain “why care” clearly and early (“Presidential briefings for you”).**
 - **Expose the tech stack upfront so readers can self-qualify.**
 - **Bulleted features list, plus visual aid (file tree / diagram).**
-- **Explain architecture in both text & Mermaid diagram**. When using Mermaid, **prefer darker colors for shapes**.
+- **Explain architecture in both text & Mermaid diagram (using specified high-contrast colors).**
 - **Prerequisites & multiple setup paths with reasons/warnings.**
-- **Mermaid setup mind map to lower anxiety**. Use **darker colors for shapes** to improve readability.
+- **Mermaid setup mind map (using specified high-contrast colors) to lower anxiety.**
 - **Copy-paste run commands.**
 - **Explicit API key/config guidance.**
 - **Status & Roadmap—confidence and transparency.**
@@ -207,17 +234,17 @@
 # Closing Tips for the LLM
 
 - Write for **zero-overhead onboarding**.
-- Use **colorful badges** and **visuals** liberally. When creating Mermaid diagrams, **ensure sufficient contrast by using darker colors for shapes**.
-- **Explain WHY behind every major step**.
+- Use **colorful badges** liberally.
+- For **Mermaid diagrams**, **STRICTLY ADHERE** to the color palettes specified in Sections 6 & 9. Use the provided light fill colors (`#bbf7d0`, `#ffddcc`, `#cceeff`, `#fffacd`, `#eeeeee`), dark text (`#111111`), and dark strokes/arrows (`#333333`). **DO NOT** invent new colors or use dark fills for diagram nodes. This is crucial for readability and accessibility.
+- **Explain WHY behind every major step.**
 - Assume readers are smart and curious but possibly new to dev.
 - Prioritize **clarity over brevity**—make it beginner-proof.
+- Prioritize **readability and accessibility** in all visual elements, especially diagrams.
 - Encourage exploration, questions, and feedback.
 
 ---
-<example>
-Certainly! Here’s an anonymized and obfuscated version of that README.md, sanitized of repo-specific names, usernames, URLs, API providers, and product branding. It still illustrates a rich, inspiring, high-quality README.md pattern, ideal for an LLM reference:
+{{example}}
 
----
 
 # ProjectName: Next-Gen Personalized Intelligence Platform
 
@@ -296,18 +323,6 @@ graph TD
     I --> J[Summary JSON];
     J --> K[Markdown Brief];
     K --> L[Serve via API/UI];
-    style A fill:#333
-    style B fill:#444
-    style C fill:#555
-    style D fill:#666
-    style E fill:#777
-    style F fill:#888
-    style G fill:#999
-    style H fill:#aaa
-    style I fill:#bbb
-    style J fill:#ccc
-    style K fill:#ddd
-    style L fill:#eee
 ```
 
 ---
@@ -382,12 +397,12 @@ flowchart TD
     E --> F[Run dev]
     B -->|Docker| G[Build container]
     G --> H[Run container]
-    style C fill:#333
-    style G fill:#444
-    style D fill:#555
-    style F fill:#666
-    style H fill:#777
-    style B fill:#888,stroke:#333,stroke-width:2px,color:#111
+    style C fill:#bbf
+    style G fill:#fa8
+    style D fill:#bbf
+    style F fill:#bfb
+    style H fill:#bfb
+    style B fill:#ff9,stroke:#333,stroke-width:2px,color:#111
 ```
 
 ---
@@ -447,4 +462,5 @@ This project is under the [LICENSE_TYPE](./LICENSE).
 
 # _Empower your decisions with automated intelligence._
 
-</example>
+{{/example}}
+

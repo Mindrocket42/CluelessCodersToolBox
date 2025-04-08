@@ -1,7 +1,7 @@
-# 🗂️ **Document Format Converters** — *Your Beginner-Friendly PDF Toolkit*
+# 🗂️ **PDF Converter Toolkit** — *Turn PDFs into Images or Markdown with Ease*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-![Python 3.8+](https://img.shields.io/badge/Python-%3E=3.8-blue)
+![Python 3.11+](https://img.shields.io/badge/Python-%3E=3.11-blue)
 ![Windows](https://img.shields.io/badge/Windows-supported-brightgreen)
 ![Linux](https://img.shields.io/badge/Linux-supported-brightgreen)
 ![macOS](https://img.shields.io/badge/macOS-supported-brightgreen)
@@ -9,167 +9,152 @@
 
 ---
 
-## ✨ What is Document Format Converters?
+## ✨ What & Why
 
-A **zero-cost, beginner-friendly toolkit** to turn your PDFs into **images** or **Markdown text** — even if they’re scanned or image-only!
+**Convert any PDF into high-quality images or clean, editable Markdown — even if it's just a scanned document.**
 
-- **Extract slides or pages as images** for presentations, annotation, or archiving.
-- **Convert PDFs to editable Markdown**, with **automatic OCR fallback** if the PDF has no embedded text.
-- Designed for **clueless coders, prompt engineers, students, and casual contributors** who want **fast, no-fuss document conversion**.
+Are you a prompt engineer, student, researcher, or beginner coder who wants to **extract slides, notes, or text from PDFs** without complex tools? This toolkit:
 
-Think of it as your **Swiss Army knife** for PDFs — no coding degree required.
+- **Converts PDFs into crisp images** for annotation, presentations, or archiving.
+- **Extracts text into Markdown**, with **automatic OCR fallback** for scanned pages.
+- Works **entirely offline** — no cloud, no API keys.
+- Designed for **clueless coders** — so you can focus on your content, not the code.
+
+Think of it as your **Swiss Army knife for PDFs** — simple, powerful, and beginner-friendly.
 
 ---
 
 ## 🧰 Tech Stack Overview
 
-| Area            | Technologies & Libraries                                         |
-|-----------------|------------------------------------------------------------------|
-| **Language**    | Python 3.8+                                                      |
-| **PDF to Images** | `PyMuPDF`, `pdf2image`, `tqdm`, `logging`                      |
-| **PDF to Markdown** | `pdfplumber`, `pytesseract`, `pdf2image`, `Pillow`           |
-| **OCR Engine**  | [Tesseract OCR](https://github.com/tesseract-ocr/tesseract)      |
-| **CLI/Script**  | Pure Python scripts                                              |
+| Area               | Technologies & Libraries                                         | Minimum Version / Notes                     |
+|--------------------|------------------------------------------------------------------|--------------------------------------------|
+| **Language**       | Python                                                          | 3.11+                                      |
+| **PDF to Images**  | `pdf2image`, `PyMuPDF (fitz)`, `tqdm`, `logging`                | Batch + fast conversion                    |
+| **PDF to Markdown**| `pdfplumber`, `pytesseract`, `pdf2image`, `Pillow`              | Text extraction + OCR fallback             |
+| **OCR Engine**     | [Tesseract OCR](https://github.com/tesseract-ocr/tesseract)     | Installed locally                          |
+| **Infrastructure** | Pure Python scripts                                              | No databases, no cloud, no APIs            |
 
-*No databases, no cloud APIs, no complex infrastructure.*
-
----
-
-## 🌱 Why This Fork?
-
-- **Batch processing**: Convert entire folders, not just single files.
-- **OCR fallback**: Extracts text even from scanned PDFs.
-- **Cleaner, friendlier docs**: For beginners and non-coders.
-- **Multiple conversion methods**: Choose between fast or high-quality.
-- **Ready to extend**: Modular Python code.
+*Runs on Windows, Linux, macOS.*
 
 ---
 
 ## 🚀 Key Features
 
-- **PDF to Images**:
-  - Convert PDFs into high-resolution PNGs.
-  - Supports grayscale for better OCR.
+- **PDF to Images:**
   - Batch convert multiple PDFs.
-  - Two methods: `PyMuPDF` (fast) and `pdf2image` (high quality).
-- **PDF to Markdown**:
-  - Extracts text from PDFs.
+  - High-resolution PNG output, grayscale optimized for OCR.
+  - Two methods:
+    - **PyMuPDF**: fast, simple (edit file path manually).
+    - **pdf2image**: higher quality, batch, with progress bar.
+- **PDF to Markdown:**
+  - Extracts embedded text.
   - Falls back to OCR if no text found.
   - Saves clean, editable Markdown files.
-- **Beginner-friendly setup** with clear instructions.
-- **Cross-platform**: Windows, Linux, macOS.
-
-<details>
-<summary>📁 <strong>Project Structure</strong></summary>
-
-````plaintext
-Document-Format-Converters/
-├── PDF-to-Images/
-│   ├── pdf_to_images.py                  # Batch converter using pdf2image
-│   ├── pdf to images using PyMuPDF.py    # Simple script, hardcoded path
-│   ├── Input-Files/                      # Put your PDFs here
-│   └── Output-Images/                    # Converted images saved here
-├── PDF-to-Markdown/
-│   └── pdf_to_markdown.py                # PDF to Markdown with OCR fallback
-├── requirements.txt                      # Python dependencies
-├── README.md                             # This file
-└── .README-instructions.md               # Expert instructions
-````
-
-</details>
+- **Cross-platform:** Windows, Linux, macOS.
+- **No API keys or cloud required.**
+- **Beginner-friendly setup** with multiple options.
 
 ---
 
-## ⚙️ How It Works
+## 🧩 How It Works — System Overview
 
 ### Step-by-step
 
-1. **Place your PDFs** in the `Input-Files/` folder (for images) or specify path (for Markdown).
-2. **Run the script**:
-   - For images: convert all PDFs to PNGs.
-   - For Markdown: extract text, or OCR if needed.
-3. **Get your output**:
-   - Images saved in `Output-Images/`.
-   - Markdown saved alongside your PDF.
+1. **Input:** Provide your PDF file(s).
+2. **Choose conversion:**
+   - **Images:** Convert all pages to PNG images.
+   - **Markdown:** Extract text, or OCR if no text found.
+3. **Processing:**
+   - For images: convert each page to a high-res PNG.
+   - For Markdown: extract text or run OCR on page images.
+4. **Output:**
+   - Images saved as PNG files.
+   - Markdown saved as `.md` files.
 
-### 🖼️ + 📝 = 💡
-
----
-
-### 🔄 Conversion Flow Diagram
+### Conversion Flow Diagram
 
 ```mermaid
 flowchart TD
-    A[PDF Files] --> B{Choose Conversion}
+    A[PDF Files] --> B{Conversion Type}
     B -->|Images| C[PDF-to-Images Module]
     B -->|Markdown| D[PDF-to-Markdown Module]
     C --> E[Convert pages to PNGs]
-    D --> F{Text found?}
-    F -->|Yes| G[Extract text]
-    F -->|No| H[Run OCR on images]
+    D --> F{Text Found?}
+    F -->|Yes| G[Extract Text]
+    F -->|No| H[Run OCR on Images]
     G --> I[Save as Markdown]
     H --> I
-    E --> J[Save images to folder]
-    style A fill:#ff9,stroke:#333,stroke-width:2px
-    style B fill:#bbf,stroke:#333,stroke-width:2px
-    style F fill:#bbf,stroke:#333,stroke-width:2px
-    style I fill:#bfb,stroke:#333,stroke-width:2px
-    style J fill:#bfb,stroke:#333,stroke-width:2px
+    E --> J[Save Images]
+
+    style A fill:#eeeeee,stroke:#333333,color:#111111
+    style B fill:#fffacd,stroke:#333333,color:#111111
+    style C fill:#cceeff,stroke:#333333,color:#111111
+    style D fill:#cceeff,stroke:#333333,color:#111111
+    style E fill:#bbf7d0,stroke:#333333,color:#111111
+    style F fill:#fffacd,stroke:#333333,color:#111111
+    style G fill:#bbf7d0,stroke:#333333,color:#111111
+    style H fill:#ffddcc,stroke:#333333,color:#111111
+    style I fill:#bbf7d0,stroke:#333333,color:#111111
+    style J fill:#bbf7d0,stroke:#333333,color:#111111
 ```
 
 ---
 
 ## 🛠️ Prerequisites
 
-- **Python 3.8+**  
+- **Python 3.11+**  
   [Download Python](https://www.python.org/downloads/)
 
 - **Tesseract OCR** (for scanned PDFs)  
   [Download Tesseract](https://github.com/tesseract-ocr/tesseract)  
-  *Make sure to note the install path (e.g., `C:\Program Files\Tesseract-OCR\tesseract.exe`).*
+  *Note the install path (e.g., `C:\Program Files\Tesseract-OCR\tesseract.exe`).*
 
-- **Python packages** (see `requirements.txt`):  
-  `fitz` (PyMuPDF), `pdf2image`, `pdfplumber`, `pytesseract`, `Pillow`, `tqdm`, `logging`
+- **Python packages:**  
+  `fitz` (PyMuPDF), `pdf2image`, `pdfplumber`, `pytesseract`, `Pillow`, `tqdm`, `logging`  
+  *(Install via `requirements.txt`)*
+
+- **No API keys required!**  
+  All processing is local and offline.
 
 ---
 
-## ⚡ Setup Options (Choose One)
+## ⚡ Setup — Multiple Clear Paths
 
-### 🥇 Option 1: Virtual Environment (Recommended)
+> You should get this running in **~15 minutes**. Choose one option:
+
+### 🥇 Option 1: Virtual Environment (Recommended for Beginners)
 
 ```bash
-# Clone the repo
 git clone <repo-url>
 cd Document-Format-Converters
 
-# Create and activate virtual environment
 python -m venv venv
-venv\Scripts\activate  # On Windows
+# Activate:
+venv\Scripts\activate        # On Windows
 # or
-source venv/bin/activate  # On macOS/Linux
+source venv/bin/activate     # On macOS/Linux
 
-# Install dependencies
 pip install -r requirements.txt
 ```
 
 ### 🥈 Option 2: Conda Environment
 
 ```bash
-conda create -n doc-convert python=3.8
-conda activate doc-convert
+conda create -n pdfconvert python=3.11
+conda activate pdfconvert
 pip install -r requirements.txt
 ```
 
-### 🐳 Option 3: Docker (Advanced Users)
+### 🐳 Option 3: Docker (Optional, Not Recommended for Beginners)
 
-> ⚠️ *Docker is optional and may be tricky for beginners.*
+> ⚠️ Docker setup is optional and may be tricky for newcomers.
 
-- Ensure [Docker Desktop](https://www.docker.com/products/docker-desktop) is installed.
+- Install [Docker Desktop](https://www.docker.com/products/docker-desktop)
 - Build and run:
 
 ```bash
-docker build -t doc-convert .
-docker run -v "$(pwd)/Input-Files":/app/Input-Files -v "$(pwd)/Output-Images":/app/Output-Images doc-convert
+docker build -t pdfconvert .
+docker run pdfconvert
 ```
 
 ---
@@ -178,39 +163,41 @@ docker run -v "$(pwd)/Input-Files":/app/Input-Files -v "$(pwd)/Output-Images":/a
 
 ```mermaid
 flowchart TD
-    A[Clone Repo] --> B{Choose Setup Method}
-    B -->|venv| C[Create Virtual Env]
-    C --> D[Activate Env]
+    A[Clone Repository] --> B{Choose Setup Method}
+    B -->|Virtualenv| C[Create Virtual Environment]
+    C --> D[Activate Virtualenv]
     D --> E[Install Dependencies]
-    B -->|Conda| F[Create Conda Env]
-    F --> G[Activate Conda Env]
+    B -->|Conda| F[Create Conda Environment]
+    F --> G[Activate Conda Environment]
     G --> E
     B -->|Docker| H[Build Docker Image]
     H --> I[Run Docker Container]
     E --> J[Configure Tesseract Path]
     J --> K[Run Conversion Scripts]
-    style A fill:#ff9
-    style B fill:#bbf
-    style C fill:#bbf
-    style F fill:#bbf
-    style H fill:#fa8
-    style J fill:#bfb
-    style K fill:#bfb
+
+    style A fill:#eeeeee,stroke:#333333,color:#111111
+    style B fill:#fffacd,stroke:#333333,color:#111111
+    style C fill:#cceeff,stroke:#333333,color:#111111
+    style D fill:#cceeff,stroke:#333333,color:#111111
+    style E fill:#bbf7d0,stroke:#333333,color:#111111
+    style F fill:#cceeff,stroke:#333333,color:#111111
+    style G fill:#cceeff,stroke:#333333,color:#111111
+    style H fill:#ffddcc,stroke:#333333,color:#111111
+    style I fill:#ffddcc,stroke:#333333,color:#111111
+    style J fill:#fffacd,stroke:#333333,color:#111111
+    style K fill:#bbf7d0,stroke:#333333,color:#111111
 ```
 
 ---
 
-## ▶️ Running the Tools
+## ▶️ Running the Project
 
-### Convert PDFs to Images (Batch)
+### Convert PDFs to Images (Batch Mode)
 
 ```bash
 cd PDF-to-Images
 python pdf_to_images.py
 ```
-
-- Place PDFs in `Input-Files/`
-- Images saved in `Output-Images/`
 
 ### Convert a PDF to Markdown
 
@@ -220,9 +207,8 @@ python pdf_to_markdown.py
 ```
 
 - Enter the path to your PDF when prompted.
-- Markdown saved next to your PDF.
 
-### Alternative: Quick Single PDF to Images (PyMuPDF)
+### Quick Single PDF to Images (PyMuPDF)
 
 - Edit `pdf to images using PyMuPDF.py` to set your PDF path.
 - Run:
@@ -233,17 +219,17 @@ python "pdf to images using PyMuPDF.py"
 
 ---
 
-## 🔑 Configuration Notes
+## 🔑 Configuration & API Keys
 
-- **Tesseract Path**:  
-  If using Windows, ensure this line in `pdf_to_markdown.py` points to your install:
+- **Tesseract Path:**  
+  In `pdf_to_markdown.py`, ensure this line points to your install:
 
 ```python
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 ```
 
-- **No API keys required!**  
-  All processing is local.
+- **No API keys needed!**  
+  Everything runs locally.
 
 ---
 
@@ -266,9 +252,10 @@ pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tessera
 
 ---
 
-## 📜 License
+## 📜 License & Attribution
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE).  
+Originally based on open-source PDF conversion scripts, improved for beginners.
 
 ---
 

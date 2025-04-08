@@ -1,23 +1,25 @@
-# 🧠 Repo Analyzer: Your Friendly Codebase Explorer
+# 🧠 **Repo Analyzer: Instantly Understand Any Codebase**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 ![Python 3.7+](https://img.shields.io/badge/Python-%3E=3.7-blue)
-![Supported OS](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)
+![Windows](https://img.shields.io/badge/Windows-supported-lightgrey)
+![Linux](https://img.shields.io/badge/Linux-supported-lightgrey)
+![macOS](https://img.shields.io/badge/macOS-supported-lightgrey)
 
 ---
 
-## 🚀 What is Repo Analyzer?
+## 🌟 What is Repo Analyzer? *Why should you care?*
 
-Imagine if you could **summon a robot assistant** to **scan your entire codebase**, **skip the junk**, and **hand you a clean, structured summary** — ready for AI models or your own review.
+Ever felt **lost in a giant codebase**? Or wanted a **quick, clean summary** of a project *without* digging through endless files?
 
-**Repo Analyzer** does exactly that:
+**Repo Analyzer** is your **friendly robot assistant** that:
 
-- It **clones or scans** any Git repository.
-- **Filters out** binaries, media, and clutter.
-- **Extracts code, imports, and metadata**.
-- **Exports a detailed JSON snapshot** of your project.
+- **Clones or scans** any Git repository (local or remote)
+- **Skips the junk**: binaries, media, clutter, and noise
+- **Extracts code, imports, and metadata**
+- **Exports a beginner-friendly JSON snapshot** of the entire repo
 
-Perfect for **prompt engineers, coding newcomers, or casual contributors** who want to **understand, document, or improve** any repo — **without getting lost**.
+Perfect for **prompt engineers, coding newcomers, or casual contributors** who want to **understand, document, or improve** any repo — **without getting overwhelmed**.
 
 ---
 
@@ -47,25 +49,11 @@ Perfect for **prompt engineers, coding newcomers, or casual contributors** who w
 - 📝 **Beginner-friendly CLI prompts**
 - 🔍 **Ideal for prepping repos for LLM analysis**
 
-<details>
-<summary>📁 Example Directory Structure</summary>
-
-```plaintext
-your-repo/
-├── .Repo-Analyzer-Output/
-│   └── analysis_YYYYMMDD_HHMMSS.json
-├── src/
-│   ├── main.py
-│   └── utils.py
-├── README.md
-├── requirements.txt
-└── ...
-```
-</details>
-
 ---
 
 ## 🧩 How It Works: Under the Hood
+
+**In simple steps:**
 
 1. **Input**: You provide a **local repo path** (and optionally a **Git URL** to clone).
 2. **Clone (optional)**: If URL is given, it clones the repo.
@@ -88,7 +76,7 @@ flowchart TD
     B -- No --> D[Use local repo]
     C --> E[Scan all files]
     D --> E
-    E --> F{Exclude?}
+    E --> F{Excluded?}
     F -- Yes --> G[Skip file]
     F -- No --> H[Analyze file]
     H --> I[Extract content, imports, metadata]
@@ -98,6 +86,20 @@ flowchart TD
     K -- Yes --> E
     K -- No --> L[Export JSON report]
     L --> M[Done!]
+
+style A fill:#cceeff,stroke:#333333,color:#111111
+style B fill:#fffacd,stroke:#333333,color:#111111
+style C fill:#cceeff,stroke:#333333,color:#111111
+style D fill:#cceeff,stroke:#333333,color:#111111
+style E fill:#cceeff,stroke:#333333,color:#111111
+style F fill:#fffacd,stroke:#333333,color:#111111
+style G fill:#ffddcc,stroke:#333333,color:#111111
+style H fill:#cceeff,stroke:#333333,color:#111111
+style I fill:#bbf7d0,stroke:#333333,color:#111111
+style J fill:#bbf7d0,stroke:#333333,color:#111111
+style K fill:#fffacd,stroke:#333333,color:#111111
+style L fill:#bbf7d0,stroke:#333333,color:#111111
+style M fill:#eeeeee,stroke:#333333,color:#111111
 ```
 
 ---
@@ -117,7 +119,7 @@ _No API keys required!_
 
 ## ⚙️ Setup Options (Choose One)
 
-### 🥇 Option 1: Virtual Environment (Recommended)
+### 🥇 Option 1: Virtual Environment (Recommended for Beginners)
 
 ```bash
 # Clone the repo (or download ZIP)
@@ -145,7 +147,7 @@ conda activate repo_env
 pip install -r requirements.txt
 ```
 
-### 🥉 Option 3: Docker (Advanced Users)
+### 🥉 Option 3: Docker (Optional, Not Recommended for Beginners)
 
 > ⚠️ **Note:** Docker adds complexity. Beginners may skip this.
 
@@ -173,13 +175,16 @@ flowchart TD
     F --> H[Install dependencies]
     H --> I[Run Repo Analyzer]
     G --> I
-    style C fill:#bbf
-    style D fill:#bbf
-    style E fill:#fa8
-    style F fill:#bfb
-    style G fill:#bfb
-    style H fill:#ff9
-    style I fill:#bfb
+
+style A fill:#cceeff,stroke:#333333,color:#111111
+style B fill:#fffacd,stroke:#333333,color:#111111
+style C fill:#cceeff,stroke:#333333,color:#111111
+style D fill:#cceeff,stroke:#333333,color:#111111
+style E fill:#ffddcc,stroke:#333333,color:#111111
+style F fill:#bbf7d0,stroke:#333333,color:#111111
+style G fill:#bbf7d0,stroke:#333333,color:#111111
+style H fill:#cceeff,stroke:#333333,color:#111111
+style I fill:#bbf7d0,stroke:#333333,color:#111111
 ```
 
 ---
@@ -192,10 +197,10 @@ After setup, run:
 python Repo-Analyzer-main01.py
 ```
 
-You'll be prompted:
+You'll be prompted to:
 
-- **Repository URL** (press Enter to skip if local)
-- **Local repository path**
+- Enter a **repository URL** (press Enter to skip if analyzing local repo)
+- Enter the **local repository path**
 
 The tool will:
 

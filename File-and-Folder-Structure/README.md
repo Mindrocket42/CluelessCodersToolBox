@@ -79,7 +79,7 @@ ProjectRoot/
 
 ---
 
-## 🔄 Workflow Diagram
+## � Workflow Diagram
 
 ```mermaid
 flowchart TD
@@ -92,10 +92,10 @@ flowchart TD
     F --> G[Run Map Script]
     G --> H[Tree Saved as TXT]
 
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#bbf,stroke:#333,stroke-width:2px
-    style E fill:#bfb,stroke:#333,stroke-width:2px
-    style H fill:#bfb,stroke:#333,stroke-width:2px
+    style A fill:#0044cc,color:#fff,stroke:#333,stroke-width:2px
+    style B fill:#0066cc,color:#fff,stroke:#333,stroke-width:2px
+    style E fill:#228B22,color:#fff,stroke:#333,stroke-width:2px
+    style H fill:#228B22,color:#fff,stroke:#333,stroke-width:2px
 ```
 
 ---
