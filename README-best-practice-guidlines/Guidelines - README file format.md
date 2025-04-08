@@ -7,7 +7,7 @@
 - Target audience **"clueless coders"**: natural language prompt engineers, coding newcomers, vibe coders or casual contributors.
 - Write with **clarity, empathy**, and accessible language.
 - Combine **motivation, explanation, and actionable instructions.**
-- Visually rich—**use badges, flowcharts, diagrams wherever helpful**.
+- Visually rich—**use badges, flowcharts, diagrams wherever helpful**. When creating Mermaid diagrams, **prefer darker colors for shapes to ensure sufficient contrast**.
 - Surface all **prerequisite knowledge early**, minimizing surprises.
 - Provide **multiple setup paths**; warn explicitly about tricky parts.
 - Help users understand **what the repo does, why it exists, and how it fits together**.
@@ -70,7 +70,7 @@
   - Core features
   - Notable integrations
   - Unique aspects
-- Optionally add a **file structure code block** or Mermaid chart showing folder layout.
+- Optionally add a **file structure code block** or Mermaid chart showing folder layout. When using Mermaid, **use darker colors for shapes**.
 
 ---
 
@@ -79,7 +79,7 @@
 - **Explain the architecture or workflow** in beginner language.
 - Use both:
   - Concise **step-by-step description** (e.g., 1-4 steps)
-  - A **Mermaid flowchart or diagram** of data/logic flow.
+  - A **Mermaid flowchart or diagram** of data/logic flow. When creating Mermaid diagrams, **prefer darker colors for shapes to ensure sufficient contrast**.
 - Cover:
   - Inputs
   - Key processing stages
@@ -125,7 +125,7 @@
 
 ### 9. Visual Setup Guide
 
-- **Mermaid flowchart or mind map** summarizing the full setup & launch process
+- **Mermaid flowchart or mind map** summarizing the full setup & launch process. When creating Mermaid diagrams, **use darker colors for shapes to improve readability**.
 - Include visual differentiation for options
 - Use **color blocks** or emojis for clarity
 - *Inspired by your detailed diagram, but encourage embedding per-project diagrams*
@@ -193,9 +193,9 @@
 - **Explain “why care” clearly and early (“Presidential briefings for you”).**
 - **Expose the tech stack upfront so readers can self-qualify.**
 - **Bulleted features list, plus visual aid (file tree / diagram).**
-- **Explain architecture in both text & Mermaid diagram.**
+- **Explain architecture in both text & Mermaid diagram**. When using Mermaid, **prefer darker colors for shapes**.
 - **Prerequisites & multiple setup paths with reasons/warnings.**
-- **Mermaid setup mind map to lower anxiety.**
+- **Mermaid setup mind map to lower anxiety**. Use **darker colors for shapes** to improve readability.
 - **Copy-paste run commands.**
 - **Explicit API key/config guidance.**
 - **Status & Roadmap—confidence and transparency.**
@@ -207,8 +207,8 @@
 # Closing Tips for the LLM
 
 - Write for **zero-overhead onboarding**.
-- Use **colorful badges** and **visuals** liberally.
-- **Explain WHY behind every major step.**
+- Use **colorful badges** and **visuals** liberally. When creating Mermaid diagrams, **ensure sufficient contrast by using darker colors for shapes**.
+- **Explain WHY behind every major step**.
 - Assume readers are smart and curious but possibly new to dev.
 - Prioritize **clarity over brevity**—make it beginner-proof.
 - Encourage exploration, questions, and feedback.
@@ -296,6 +296,18 @@ graph TD
     I --> J[Summary JSON];
     J --> K[Markdown Brief];
     K --> L[Serve via API/UI];
+    style A fill:#333
+    style B fill:#444
+    style C fill:#555
+    style D fill:#666
+    style E fill:#777
+    style F fill:#888
+    style G fill:#999
+    style H fill:#aaa
+    style I fill:#bbb
+    style J fill:#ccc
+    style K fill:#ddd
+    style L fill:#eee
 ```
 
 ---
@@ -370,12 +382,12 @@ flowchart TD
     E --> F[Run dev]
     B -->|Docker| G[Build container]
     G --> H[Run container]
-    style C fill:#bbf
-    style G fill:#fa8
-    style D fill:#bbf
-    style F fill:#bfb
-    style H fill:#bfb
-    style B fill:#ff9,stroke:#333,stroke-width:2px,color:#111
+    style C fill:#333
+    style G fill:#444
+    style D fill:#555
+    style F fill:#666
+    style H fill:#777
+    style B fill:#888,stroke:#333,stroke-width:2px,color:#111
 ```
 
 ---
