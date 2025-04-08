@@ -158,21 +158,27 @@ python your_script.py
 
 ```mermaid
 flowchart TD
-    A[Clone Repo] --> B[Create Virtual Env]
-    B --> C[Activate Env]
-    C --> D[Install Dependencies]
-    D --> E[Run Scripts]
-    A --> F[Use Docker (Optional)]
-    F --> G[Build Docker Image]
-    G --> H[Run Container]
-    style A fill:#eeeeee,stroke:#333333,color:#111111
-    style B fill:#cceeff,stroke:#333333,color:#111111
-    style C fill:#cceeff,stroke:#333333,color:#111111
-    style D fill:#cceeff,stroke:#333333,color:#111111
-    style E fill:#bbf7d0,stroke:#333333,color:#111111
-    style F fill:#ffddcc,stroke:#333333,color:#111111
-    style G fill:#ffddcc,stroke:#333333,color:#111111
-    style H fill:#bbf7d0,stroke:#333333,color:#111111
+    Start([Start Setup]) --> Clone[Clone Repo]
+    Clone --> Venv[Create Virtual Env]
+    Venv --> Activate[Activate Env]
+    Activate --> Install[Install Dependencies]
+    Install --> Run[Run Scripts]
+    Start --> DockerOpt[Docker Option]
+    DockerOpt --> Build[Build Docker Image]
+    Build --> Container[Run Container]
+    Run --> Done([Ready to Use])
+    Container --> Done
+
+    style Start fill:#eeeeee,stroke:#333333,color:#111111
+    style Clone fill:#cceeff,stroke:#333333,color:#111111
+    style Venv fill:#cceeff,stroke:#333333,color:#111111
+    style Activate fill:#cceeff,stroke:#333333,color:#111111
+    style Install fill:#cceeff,stroke:#333333,color:#111111
+    style Run fill:#bbf7d0,stroke:#333333,color:#111111
+    style DockerOpt fill:#ffddcc,stroke:#333333,color:#111111
+    style Build fill:#ffddcc,stroke:#333333,color:#111111
+    style Container fill:#bbf7d0,stroke:#333333,color:#111111
+    style Done fill:#fffacd,stroke:#333333,color:#111111
 ```
 
 ---
