@@ -54,7 +54,7 @@ class RepoAnalyzer:
     def __init__(self, repo_path: str):
         """Initialize the repository analyzer."""
         self.repo_path = Path(repo_path)
-        self.output_path = self.repo_path / 'Repo-Analyzer-Output'  # Save directly in the repo path
+        self.output_path = self.repo_path / '.Repo-Analyzer-Output'  # Save directly in the repo path
         
         # Ensure the output directory exists
         if not self.output_path.exists():
