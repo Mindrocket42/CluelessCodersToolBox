@@ -32,6 +32,9 @@ out/
 !.gitignore
 !.git
 
+# Ignore all files or folders starting with '_'
+_*  
+
 # Common sensitive files
 secrets.toml
 secrets.yaml
