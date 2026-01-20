@@ -1,89 +1,88 @@
-# ==============================================================================
-# General Exclusions (Windows-Specific)
-# ==============================================================================
-# Logs and temporary files
+# ============================================================================== 
+# General Exclusions (OS / Editor Noise)
+# ============================================================================== 
 *.log
 *.tmp
 *.bak
 *.old
-*~      # Backup files (various editors)
+*~
 
 # Windows
 Thumbs.db
 ehthumbs.db
 Desktop.ini
 
-# ==============================================================================
+# ============================================================================== 
 # Node.js (If Applicable)
-# ==============================================================================
+# ============================================================================== 
 node_modules/
 npm-debug.log*
 yarn-error.log*
 
-# ==============================================================================
+# ============================================================================== 
 # Python (If Applicable)
-# ==============================================================================
+# ============================================================================== 
 __pycache__/
 *.pyc
 *.pyo
 *.egg-info/
 *.pth
 
-# ==============================================================================
-# Build & Output Directories (Adjust to Your Project)
-# ==============================================================================
+# ============================================================================== 
+# Build & Output Directories
+# ============================================================================== 
 dist/
 build/
 out/
-tmp/  # Often used for temporary files
-temp/ # Another common temp directory
+tmp/
+temp/
 
-# ==============================================================================
-# IDE/Editor Specific (Personal Preference - Consider Team Consistency)
-# ==============================================================================
-.idea/      # IntelliJ IDEA
-.vscode/    # VS Code
+# ============================================================================== 
+# IDE / Editor Specific
+# ============================================================================== 
+.idea/
+.vscode/
 .project
 .settings/
 
-# ==============================================================================
-# Sensitive Information & Configuration (VERY IMPORTANT)
-# ==============================================================================
-# Environment files
+# ============================================================================== 
+# Environment & Secrets (CRITICAL)
+# ============================================================================== 
 .env
+!.env.example
 
-# Secrets and configuration (ensure these are NEVER committed)
-secrets.toml
-secrets.yaml
-secrets.json
-config.json
-config.yaml
+/secrets.toml
+/secrets.yaml
+/secrets.json
+
+/config.json
+/config.yaml
+
 *.key
 *.pem
 id_rsa
-id_rsa.pub
 
-# AWS credentials
 .aws/
-
-# Docker-specific
 .docker/config.json
 
-# Database files
+# ============================================================================== 
+# Databases & Local State
+# ============================================================================== 
 *.db
 *.sqlite
 *.sqlite3
 
-# ==============================================================================
-# Deprecated/Local Files (Your Custom Workflow - Review Carefully)
-# ==============================================================================
-_*/**  # Ignore contents of deprecated/local folders
-_*     # Ignore contents of deprecated files
-#!.env.example # This has been moved to be above _*
-# Exclude .env template from being ignored is removed
+# ============================================================================== 
+# Double-Underscore Convention (Local / Archived / Throwaway)
+# ============================================================================== 
+# Any directory starting with "__" is ignored entirely
+__*/**
 
-# ==============================================================================
-# Keep These (Crucial for Repository Functionality)
-# ==============================================================================
+# Any file starting with "__" is ignored
+__*
+
+# ============================================================================== 
+# Always Track These
+# ============================================================================== 
 !.gitignore
-!.gitattributes  # Ensure this is always tracked
+!.gitattributes
