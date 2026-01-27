@@ -62,7 +62,7 @@ def compress_audio(input_file, output_file):
         print("Compression failed:", e)
 
 # Example usage:
-input_file = r"input_file"  # Replace with the path to your input audio file
-output_file = r"ouput_file.mp3"  # Replace with the desired path for the compressed audio file
+input_file = r"C:\Users\Tim\Downloads\Audio from Adele.oga"  # Replace with the path to your input audio file
+output_file = r"C:\Users\Tim\Downloads\Audio from Adele.mp3"  # Replace with the desired path for the compressed audio file
 
 compress_audio(input_file, output_file)

@@ -116,8 +116,8 @@ flowchart TD
 1. **Clone the repo**
 
 ```bash
-git clone https://github.com/yourusername/Audio-File-Tools.git
-cd Audio-File-Tools
+git clone https://github.com/yourusername/CluelessCodersToolbox.git
+cd CluelessCodersToolbox/tools/Audio-File-Tools
 ```
 
 2. **Create a virtual environment**
@@ -250,7 +250,7 @@ This README was generated with the help of an AI coding assistant to ensure clar
 
 ## 📜 License
 
-This project is licensed under the [MIT License](./LICENSE).
+This project is licensed under the [MIT License](../../LICENSE.md).
 
 ---
 

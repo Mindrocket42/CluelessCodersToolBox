@@ -1,6 +1,6 @@
 # JSON Conversation to Markdown Converter
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../../LICENSE.md)
 ![Python 3.7+](https://img.shields.io/badge/Python-3.7+-blue.svg)
 ![Supported OS](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)
 
@@ -181,7 +181,7 @@ Using AI significantly sped up development, improved error handling, and made cr
 
 ## License 📜
 
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details (if one exists - otherwise, assume MIT).
+This project is licensed under the MIT License. See the [LICENSE](../../LICENSE.md) file for details.
 
 ---
 

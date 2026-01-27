@@ -48,13 +48,15 @@ class RepoAnalyzer:
         '.pytest_cache',
         '.vscode',
         'coverage',
-        'Repo-Analyzer-Output'
+        '__Repo-Analyzer-Output',
+        '__history',
+        '__*'
     }
     
     def __init__(self, repo_path: str):
         """Initialize the repository analyzer."""
         self.repo_path = Path(repo_path)
-        self.output_path = self.repo_path / '.Repo-Analyzer-Output'  # Save directly in the repo path
+        self.output_path = self.repo_path / '__Repo-Analyzer-Output'  # Save directly in the repo path
         
         # Ensure the output directory exists
         if not self.output_path.exists():
@@ -94,10 +96,20 @@ class RepoAnalyzer:
                 logger.info(f"Skipping file {file_path} due to excluded extension: {file_path.suffix}")
                 return False
 
-            # Check directory path for exclusions
-            if any(excluded in file_path.parts for excluded in self.EXCLUDED_DIRECTORIES):
-                logger.info(f"Skipping file {file_path} due to excluded directory")
+            # Check directory path for exclusions (exact matches or glob patterns)
+            if any(
+                fnmatch(part, pattern)
+                for pattern in self.EXCLUDED_DIRECTORIES
+                for part in file_path.parts
+            ):
+                logger.info(f"Skipping file {file_path} due to excluded directory pattern")
                 return False
+                
+            # Check for directories starting with '.' or '__'
+            for part in file_path.parts:
+                if part.startswith('.') or part.startswith('__'):
+                    logger.info(f"Skipping file {file_path} due to directory starting with '.' or '__': {part}")
+                    return False
 
             logger.info(f"Including file {file_path} for processing")
             return True

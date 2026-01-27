@@ -1,7 +1,7 @@
 # 🗂️ Clueless Coders' File & Folder Structure Toolkit  
 **Effortlessly map, document, and create directory trees — no coding expertise needed!**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)  
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../../LICENSE.md)  
 ![Python 3.6+](https://img.shields.io/badge/Python-%3E=3.6-blue)  
 ![Windows](https://img.shields.io/badge/Windows-supported-brightgreen)  
 ![Linux](https://img.shields.io/badge/Linux-supported-brightgreen)  
@@ -28,7 +28,7 @@ Perfect for **prompt engineers, students, hobbyists, or anyone** who wants to or
 | **Language**    | Python 3.6+ (standard library only)             |
 | **Dependencies**| None (pure Python, no installs needed)          |
 | **Platforms**   | Windows, Linux, macOS                           |
-| **Scripts**     | `Create-File-Folder-Structure-From-Markdown.py`<br>`Map-and-save-folder-file-structure-to-txt.py` |
+| **Scripts**     | `Write-File-Folder-Structure-From-Markdown.py`<br>`Map-file-folder-structure.py`<br>`Gitignore-Map-file-folder-structure.py` |
 
 ---
 
@@ -79,7 +79,7 @@ ProjectRoot/
 
 ---
 
-## � Workflow Diagram
+## Workflow Diagram
 
 ```mermaid
 flowchart TD
@@ -92,10 +92,14 @@ flowchart TD
     F --> G[Run Map Script]
     G --> H[Tree Saved as TXT]
 
-    style A fill:#0044cc,color:#fff,stroke:#333,stroke-width:2px
-    style B fill:#0066cc,color:#fff,stroke:#333,stroke-width:2px
-    style E fill:#228B22,color:#fff,stroke:#333,stroke-width:2px
-    style H fill:#228B22,color:#fff,stroke:#333,stroke-width:2px
+    style A fill:#eeeeee,stroke:#333333,color:#111111
+    style B fill:#fffacd,stroke:#333333,color:#111111
+    style C fill:#cceeff,stroke:#333333,color:#111111
+    style D fill:#bbf7d0,stroke:#333333,color:#111111
+    style E fill:#bbf7d0,stroke:#333333,color:#111111
+    style F fill:#cceeff,stroke:#333333,color:#111111
+    style G fill:#bbf7d0,stroke:#333333,color:#111111
+    style H fill:#bbf7d0,stroke:#333333,color:#111111
 ```
 
 ---
@@ -149,10 +153,14 @@ flowchart TD
     F --> G[Run Map Script]
     G --> H[Tree Saved as TXT]
 
-    style A fill:#ff9,stroke:#333,stroke-width:2px
-    style B fill:#bbf,stroke:#333,stroke-width:2px
-    style E fill:#bfb,stroke:#333,stroke-width:2px
-    style H fill:#bfb,stroke:#333,stroke-width:2px
+    style A fill:#eeeeee,stroke:#333333,color:#111111
+    style B fill:#fffacd,stroke:#333333,color:#111111
+    style C fill:#cceeff,stroke:#333333,color:#111111
+    style D fill:#bbf7d0,stroke:#333333,color:#111111
+    style E fill:#bbf7d0,stroke:#333333,color:#111111
+    style F fill:#cceeff,stroke:#333333,color:#111111
+    style G fill:#bbf7d0,stroke:#333333,color:#111111
+    style H fill:#bbf7d0,stroke:#333333,color:#111111
 ```
 
 ---
@@ -161,13 +169,13 @@ flowchart TD
 
 ### To **Create a Folder/File Structure** from Markdown:
 
-1. **Open `Create-File-Folder-Structure-From-Markdown.py`** in any text editor.
+1. **Open `Write-File-Folder-Structure-From-Markdown.py`** in any text editor.
 2. **Edit the `base_path`** variable to your desired root folder location.
 3. **Modify the `markdown_structure`** variable with your desired tree (see example inside script).
 4. **Run:**
 
 ```bash
-python Create-File-Folder-Structure-From-Markdown.py
+python Write-File-Folder-Structure-From-Markdown.py
 ```
 
 Your folder and file tree will be created automatically!
@@ -179,12 +187,21 @@ Your folder and file tree will be created automatically!
 1. **Run:**
 
 ```bash
-python Map-and-save-folder-file-structure-to-txt.py
+python Map-file-folder-structure.py
 ```
 
 2. **When prompted, enter the full path** to the folder you want to map.
 
 3. The script will generate a `folder_structure.txt` file showing the entire tree.
+
+### To **Map with .gitignore rules**:
+
+```bash
+python Gitignore-Map-file-folder-structure.py
+```
+
+- If a `.gitignore` is found, it will be used automatically.
+- Otherwise, you can paste a path to one when prompted.
 
 ---
 
@@ -214,7 +231,7 @@ This README and toolkit were **reviewed and improved with AI assistance** to ens
 
 ## 📜 License
 
-[MIT License](LICENSE) — free to use, modify, and share.
+[MIT License](../../LICENSE.md) — free to use, modify, and share.
 
 ---
 

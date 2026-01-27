@@ -1,6 +1,6 @@
 # 🗂️ **PDF Converter Toolkit** — *Turn PDFs into Images or Markdown with Ease*
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../../LICENSE.md)
 ![Python 3.11+](https://img.shields.io/badge/Python-%3E=3.11-blue)
 ![Windows](https://img.shields.io/badge/Windows-supported-brightgreen)
 ![Linux](https://img.shields.io/badge/Linux-supported-brightgreen)
@@ -126,7 +126,7 @@ flowchart TD
 
 ```bash
 git clone <repo-url>
-cd Document-Format-Converters
+cd CluelessCodersToolbox/tools/Document-Format-Converters
 
 python -m venv venv
 # Activate:
@@ -254,7 +254,7 @@ pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tessera
 
 ## 📜 License & Attribution
 
-This project is licensed under the [MIT License](LICENSE).  
+This project is licensed under the [MIT License](../../LICENSE.md).  
 Originally based on open-source PDF conversion scripts, improved for beginners.
 
 ---

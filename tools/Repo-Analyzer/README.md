@@ -1,6 +1,6 @@
 # 🧠 **Repo Analyzer: Instantly Understand Any Codebase**
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](../../LICENSE.md)
 ![Python 3.7+](https://img.shields.io/badge/Python-%3E=3.7-blue)
 ![Windows](https://img.shields.io/badge/Windows-supported-lightgrey)
 ![Linux](https://img.shields.io/badge/Linux-supported-lightgrey)
@@ -31,7 +31,7 @@ Perfect for **prompt engineers, coding newcomers, or casual contributors** who w
 | **Libraries**    | `gitpython`, `pathlib`, `logging`, `json`   |
 | **Storage**      | Local JSON export                           |
 | **CLI**          | Interactive command-line prompts            |
-| **Output**       | Timestamped `.json` files in `.Repo-Analyzer-Output` |
+| **Output**       | Timestamped `.json` files in `__Repo-Analyzer-Output` |
 
 ---
 
@@ -63,7 +63,7 @@ Perfect for **prompt engineers, coding newcomers, or casual contributors** who w
    - Reads text files
    - Extracts imports (Python)
    - Gathers metadata
-6. **Export**: Saves a **timestamped JSON** report inside `.Repo-Analyzer-Output`.
+6. **Export**: Saves a **timestamped JSON** report inside `__Repo-Analyzer-Output`.
 
 ---
 
@@ -123,8 +123,8 @@ _No API keys required!_
 
 ```bash
 # Clone the repo (or download ZIP)
-git clone https://github.com/yourname/repo-analyzer.git
-cd repo-analyzer
+git clone https://github.com/yourname/CluelessCodersToolbox.git
+cd CluelessCodersToolbox/tools/Repo-Analyzer
 
 # Create virtual environment
 python -m venv repo_env
@@ -206,7 +206,7 @@ The tool will:
 
 - Clone (if URL given)
 - Analyze the repo
-- Export a JSON report inside `.Repo-Analyzer-Output`
+- Export a JSON report inside `__Repo-Analyzer-Output`
 
 ---
 
@@ -214,7 +214,7 @@ The tool will:
 
 - **No API keys required!**
 - Just provide a **repo URL** (optional) and **local path**.
-- Output saved automatically in `.Repo-Analyzer-Output`.
+- Output saved automatically in `__Repo-Analyzer-Output`.
 
 ---
 
@@ -242,7 +242,7 @@ The tool will:
 
 ## 📜 License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](../../LICENSE.md).
 
 ---
 
